@@ -1,0 +1,79 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Кости</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<div>
+				<h1>Интеллектуальное шоу "Кости"</h1>
+				<form onsubmit="return false" id="formThree">
+					<p>Введите броски <input onkeypress="return false" min="1" max="10" type="number" size="20" name="shots" value="2"></p>
+					<p>Введите кубики (1-6) <input onkeypress="return false" min="1" max="6" type="number" size="20" name="points" value="3"></p>
+				</form>
+			</div>
+		</header>
+
+		<div class="row">
+
+			<div class="col gamer1">
+				<form id="form1" onsubmit="deleteCubs();play(1);N++;return false">
+					<p>Введите Ваше Имя <input type="text" size="10" name="gamer1_name"> </p>
+					<p>Введите Ваш Никнейм <input type="text" size="20" name="gamer1_nickname" required></p>
+					<p><input type="reset" value="Очистить" id="buttonOneReset">
+						<input type="submit" value="Играть" id="buttonOne">
+					</p>
+					<!--блок вывода количества совершенных бросков и полученных очков игрока 1-->
+					<p>Количество бросков<input type="text" size="20" class="shot" name="shot" value="0" disabled></p>
+					<p>Количество очков <input type="text" size="20" class="point" name="point" value="0" disabled></p>
+				</form>
+				<!-- блок вывода изображений кубиков, выпавших игроку 1-->
+				<div class="images images-output">
+					<img src="images/diceback.png" alt="">
+					<img src="images/diceback.png" alt="">
+					<img src="images/diceback.png" alt="">
+				</div>
+			</div>
+
+			<div class="col gamer2">
+				<form id="form2" onsubmit="play(2);N++;return false">
+					<p>Введите Ваше Имя <input type="text" size="10" name="gamer2_name"></p>
+					<p>Введите Ваш Никнейм <input type="text" size="20" name="gamer2_nickname" required></p>
+					<p><input type="reset" value="Очистить">
+						<input type="submit" value="Играть" id="buttonTwo">
+					</p>
+					<!--блок вывода количества совершенных бросков и полученных очков игрока 2-->
+					<p>Количество бросков<input type="text" size="20" class="shot" name="shot" value="0" disabled></p>
+					<p>Количество очков <input type="text" size="20" class="point" name="point" value="0" disabled></p>
+				</form>
+				<!-- блок вывода изображений кубиков, выпавших игроку 2-->
+				<div class="images images-output-two">
+					<img src="images/diceback.png" alt="">
+					<img src="images/diceback.png" alt="">
+					<img src="images/diceback.png" alt="">
+				</div>
+			</div>
+
+			<div id="history" style="display:none;"></div>
+		</div>
+		<div id="result"></div>
+
+
+
+	</div>
+	<footer>
+		<div>
+			<p>Технологии HTML, CSS, JavaScript<br>Основы графического дизайна, 2021 год</p>
+		</div>
+	</footer>
+
+	<script src='js/main.js'></script>
+</body>
+
+</html>
